@@ -40,9 +40,10 @@ class HomeScreen extends StatelessWidget {
           onPressed: () {},
         ),
         title: Text(
-          'Agregar dirección',
+          'News',
           style: text.headlineSmall?.copyWith(color: colors.onPrimary),
         ),
+        
         actions: [
           PopupMenuButton<String>(
             icon: Icon(Icons.more_vert, color: colors.onPrimary),
@@ -85,65 +86,60 @@ class HomeScreen extends StatelessWidget {
       // BODY
       body: ListView(
         children: [
-          // Región
-          Container(
-            height: 80,
-            width: double.infinity,
-            color: colors.surfaceContainerLow,
-            margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-            alignment: Alignment.centerLeft,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              
+
+
+          //Chip assist
+          
+          //Banner
+    
+
+          //Carousel
+          
+          //Card
+        Card(
+            clipBehavior: Clip.antiAlias,
+
+            child: Row(//aqui vamos a meter el contenido de la card
               children: [
-                Text(
-                  'Región:',
-                  style: text.titleMedium?.copyWith(
-                    color: colors.onSurface,
-                    fontWeight: FontWeight.bold,
-                  ),
+
+                Container(
+                  width: 120,
+                  height:120, 
+                  color: colors.primaryContainer,
+                  child:const Icon(
+                    Icons.image, 
+                    size: 50,
+                    ),
                 ),
 
-                const SizedBox(height: 4),
-                Text(
-                  'Selecciona una región',
-                  style: text.bodySmall?.copyWith(color: colors.onSurfaceVariant),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(AppSpacing.space400),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children:[
+                        Text(
+                          'Título',
+                          style: text.titleLarge,
+                        ),
+                        const SizedBox(height: AppSpacing.space200),
+                        Text(
+                          'Card Horizontal con miniatura y con el contenido',
+                          style: text.bodyMedium,
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
+                
               ],
             ),
           ),
 
-          // Comuna
-          Container(
-            height: 80,
-            width: double.infinity,
-            color: colors.surfaceContainerLow,
-            margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-            alignment: Alignment.centerLeft,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-
-              children: [
-                Text(
-                  'Comuna:',
-                  style: text.titleMedium?.copyWith(
-                    color: colors.onSurface,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-
-                const SizedBox(height: 4),
-                Text(
-                  'Selecciona una comuna',
-                  style: text.bodySmall?.copyWith(color: colors.onSurfaceVariant),
-                ),
-              ],
-            ),
-          ),
         ],
       ),
+
+    
 
       // BOTTOM NAVIGATION BAR
       bottomNavigationBar: BottomNavigationBar(
